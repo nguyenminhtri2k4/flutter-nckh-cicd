@@ -17,8 +17,12 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.1' # hoặc '3.22.1+0' nếu cần chính xác
+          flutter-version: '3.22.1'  # Đảm bảo đây là version hợp lệ
+          channel: 'stable'
           cache: true
+
+      - name: Run flutter doctor
+        run: flutter doctor
 
       - name: Install dependencies
         run: flutter pub get
